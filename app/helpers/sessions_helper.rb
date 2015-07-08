@@ -29,6 +29,11 @@ module SessionsHelper
     @current_user = nil
   end
 
+  # Returns true if given users is not the current_user
+  def current_user?(user)
+    user == current_user
+  end
+
   # Remembers a user in a persistent session
   def remember(user)
     user.remember
@@ -40,5 +45,17 @@ module SessionsHelper
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+  end
+
+  # Redirect to the stored url or to the default one
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+    # dangerous
+  end
+
+  # Store the URL from access try
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
   end
 end
