@@ -1,0 +1,15 @@
+one:
+  follower: kaciano
+  followed: lana
+
+two:
+  follower: lana
+  followed: mallory
+
+three:
+  follower: lana
+  followed: kaciano
+
+four:
+  follower: other
+  followed: kaciano
