@@ -1,0 +1,9 @@
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "So, how you're feeling today?", class: 'form-control' %>
+  </div>
+  <%= f.submit 'Post', class: 'btn btn-primary' %>
+<% end %>
