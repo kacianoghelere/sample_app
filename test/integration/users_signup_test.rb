@@ -28,10 +28,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
     assert_not user.activated?
-    Try yo log in before Activate
+    # Try yo log in before Activate
     log_in_as(user)
     assert_not is_logged_in?
-    Invalid activation token
+    # Invalid activation token
     get edit_account_activation_path('Invalid token')
     assert_not is_logged_in?
     get edit_account_activation_path(user.activation_token, email: 'wrong')
