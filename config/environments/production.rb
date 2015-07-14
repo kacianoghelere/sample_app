@@ -67,7 +67,6 @@ Rails.application.configure do
   # https://whispering-mesa-6685.herokuapp.com/
   config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.delivery_method = :production
-  
   host = 'https://whispering-mesa-6685.herokuapp.com/'
   config.action_mailer.default_url_options = {host: host}
   config.action_mailer.delivery_method = :smtp
@@ -75,8 +74,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => 'noreplyquickpost@gmail.com',
-   :password             => 'oadf94A6',
+   :user_name            => 'themohawkeagle@gmail.com',
+   :password             => 'd0v4Hk11n',
    :authentication       => "plain",
    :enable_starttls_auto => true
   }
